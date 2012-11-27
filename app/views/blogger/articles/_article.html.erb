@@ -1,0 +1,16 @@
+<article class="article" id="article_<%= article.id %>">
+  <header class="article_header" id="article_<%= article.id %>">
+    <h2>
+      <%= link_to article.title, article_path(article) %>
+    </h2>
+    <h3>
+      <%= link_to article.author, main_app.user_path(article.author) %>
+      <em>wrote this on</em>
+      <span class="article-date"><%= article.publish_date %></span>
+      <span class="article-comment-count"><%= "#{article.blog_comments_count} Comments" %></span>
+    </h3>
+  </header>
+  <div class="article-content">
+    <p><%= sanitize article.content %></p>
+  </div>
+</article>
