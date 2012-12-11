@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blogger</title>
+  <title>Socialfreight Blog</title>
+  <meta charset='utf-8'>
+  <meta name="google-site-verification" content="YBxTWCsF7NumqEi-_IkfMvp4F61RxGpQ19ElYC27UEE" />
   <%= stylesheet_link_tag    "blogger/application", :media => "all" %>
   <%= javascript_include_tag "blogger/application" %>
   <%= csrf_meta_tags %>
+  <%= yield :head %>
 </head>
 <body>
 	<header>
-    <h1>Merhaba,</h1>
+    <%= render 'layouts/topbar' %>
 	</header>
-  <div class="content">
+  <div class="content" style="margin-top:50px;margin-left:5px;">
   	<div class="container">
       <%= yield %>
     </div>
