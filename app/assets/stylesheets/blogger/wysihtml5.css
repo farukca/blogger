@@ -1,5 +1,7 @@
 #wysihtml5-toolbar {
   position: relative;
+  text-align: center;
+  line-height: 0;
 }
 
 #wysihtml5-toolbar-header {
@@ -18,9 +20,12 @@
   background-image: -ms-linear-gradient(bottom, rgb(238,238,238) 0%, rgb(255,255,255) 100%);
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
   font-size: 0;
-  text-align: center;
+  margin: auto;
 }
 
+#wysihtml5-toolbar-header label {
+  display: inline;
+}
 .commands {
   border-left: 1px solid #ddd;
   display: inline-block;
