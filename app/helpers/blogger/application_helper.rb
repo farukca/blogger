@@ -1,6 +1,6 @@
 module Blogger
   module ApplicationHelper
-  	def navigator
+  	def navigator(navid, navurl, navtext, navicon)
   	end
   end
 end
