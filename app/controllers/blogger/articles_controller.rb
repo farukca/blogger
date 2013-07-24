@@ -2,7 +2,8 @@ require_dependency "blogger/application_controller"
 
 module Blogger
   class ArticlesController < ApplicationController
-
+    before_filter :require_login
+    
     def index
       @articles = Article.all
   
@@ -36,7 +37,7 @@ module Blogger
   
     def create
       @article = Article.new(params[:article])
-      @article.author_id = current_user.id
+      @article.author = current_user
   
       respond_to do |format|
         if @article.save
