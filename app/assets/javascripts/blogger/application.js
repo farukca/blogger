@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require wysihtml5-0.4.0pre.min
-//= require wysihtml5-advanced
+//= require blogger/wysihtml5-0.4.0pre.min
+//= require blogger/wysihtml5-advanced
 // require_tree .
