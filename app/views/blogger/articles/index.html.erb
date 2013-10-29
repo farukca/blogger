@@ -1,3 +1,14 @@
-<div class="row-fluid" class="articles">
-  <%=  render @articles %>
+<div id="articles_index" class="row">
+
+  <%= render "shared/page_title", page_title: "Blog", page_small_title: "Blog paylaşımları", model_name: "articles", model_path: "blogger/articles" %>
+
+  <div class="col-md-12 blog-page">
+    <div class="row">
+      <div class="col-md-9 col-sm-8 article-block">
+        <h1>Latest Blog</h1>
+        <%=  render @articles %>
+      </div>
+    </div>
+  </div>
+
 </div>

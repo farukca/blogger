@@ -36,7 +36,7 @@ module Blogger
     end
   
     def create
-      @article = Article.new(params[:article])
+      @article = Article.new(article_params)
       @article.author = current_user
   
       respond_to do |format|
@@ -54,7 +54,7 @@ module Blogger
       @article = Article.find(params[:id])
   
       respond_to do |format|
-        if @article.update_attributes(params[:article])
+        if @article.update_attributes(article_params)
           format.html { redirect_to @article, notice: 'Article was successfully updated.' }
           format.json { head :no_content }
         else
@@ -72,6 +72,11 @@ module Blogger
         format.html { redirect_to articles_url }
         format.json { head :no_content }
       end
+    end
+
+    private
+    def article_params
+      params.require(:article).permit(:author_id, :confirmed, :content, :publish_date, :title, :website)
     end
   end
 end
