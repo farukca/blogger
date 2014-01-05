@@ -3,9 +3,11 @@ require_dependency "blogger/application_controller"
 module Blogger
   class ArticlesController < ApplicationController
     before_filter :require_login
-    
+    skip_before_filter :require_login, only: [:index, :show]
+    layout "blog"
+ 
     def index
-      @articles = Article.all
+      @articles = Article.latests.page(params[:page]).per(10)
   
       respond_to do |format|
         format.html # index.html.erb

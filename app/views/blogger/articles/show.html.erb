@@ -1,7 +1,9 @@
-<div id="Article_<%= @article.id %>_page" class="row">
+<div id="article_<%= @article.id %>_page" class="row">
 
-  <% content_for(:breadcrumb_actions, flush: true) do %>
-    <%= render "actions", article: @article %>
+  <% if current_user && current_user.id == @article.author_id %>
+    <% content_for(:breadcrumb_actions, flush: true) do %>
+      <%= render "actions", article: @article %>
+    <% end %>
   <% end %>
 
   <%= render "shared/page_title", page_title: "Blog", page_small_title: "Blog paylaşımları", model_name: "articles", model_path: "blogger/articles" %>
