@@ -6,8 +6,6 @@ module Blogger
     validates :title, presence: true, length: { in: 5..255 }
     validates :content, presence: true
 
-	scope :latests, order("created_at desc")
-
     def to_param
       "#{id}-#{title.parameterize}"
     end

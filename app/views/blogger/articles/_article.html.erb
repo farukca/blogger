@@ -16,15 +16,15 @@
   <div class="col-md-12 blog-img blog-tag-data">
     <ul class="list-inline">
       <li><%= user_mini_avatar(article.author) %> <%= link_to user_name(article.author), blogger.articles_path(author_id: article.author_id) %></li>
-      <li><i class="icon-calendar"></i> <a href="#"><%= article.publish_date || article.created_at %></a></li>
-      <li><i class="icon-comments"></i> <a href="#"><%= "#{article.blog_comments_count} Comments" %></a></li>
+      <li><i class="fa fa-calendar"></i> <a href="#"><%= article.publish_date || article.created_at %></a></li>
+      <li><i class="fa fa-comments"></i> <a href="#"><%= "#{article.blog_comments_count} Comments" %></a></li>
     </ul>
   </div>
 
   <!--div class="col-md-12 blog-img blog-tag-data">
     <ul class="list-inline blog-tags">
       <li>
-        <i class="icon-tags"></i> 
+        <i class="fa fa-tags"></i> 
         <a href="#">Technology</a> 
         <a href="#">Education</a>
         <a href="#">Internet</a>

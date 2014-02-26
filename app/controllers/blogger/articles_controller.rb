@@ -7,7 +7,7 @@ module Blogger
     layout "blog"
  
     def index
-      @articles = Article.latests.page(params[:page]).per(10)
+      @articles = Article.order("created_at desc").page(params[:page]).per(10)
   
       respond_to do |format|
         format.html # index.html.erb
