@@ -5,6 +5,7 @@ module Blogger
 
     validates :title, presence: true, length: { in: 5..255 }
     validates :content, presence: true
+    validates_associated :author
 
     def to_param
       "#{id}-#{title.parameterize}"
