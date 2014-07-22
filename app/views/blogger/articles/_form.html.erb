@@ -1,7 +1,7 @@
 <div class="form">
   <%= simple_form_for @article, html: {class: 'horizontal-form'}, validate: true do |f| %>
     <%= f.error_notification %>
-    <%= f.error :base, :error_method => :to_sentence %>
+    <%= f.error :base, :error_method => :to_sentence, class: "alert alert-danger" %>
 
     <div class="form-body">
       <div class="row">
