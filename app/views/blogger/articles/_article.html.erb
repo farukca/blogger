@@ -1,9 +1,20 @@
-<div class="row">
-  <div class="col-md-12">
-    <h3><%= link_to article.title, article_path(article) %></h3>
+<div class="blog-item">
+  <h1>
+    <%= link_to article.title, article_path(article) %>
+  </h1>
+
+  <div class="col-md-12 blog-img blog-tag-data">
+    <ul class="list-inline">
+      <li><%= user_mini_avatar(article.author) %> <%= link_to user_name(article.author), blogger.articles_path(author_id: article.author_id) %></li>
+      <li><i class="fa fa-calendar"></i> <a href="#"><%= article.publish_date || article.created_at %></a></li>
+      <li><i class="fa fa-comments"></i> <a href="#"><%= "#{article.blog_comments_count} Comments" %></a></li>
+      <% if current_user && current_user.id == article.author_id %>
+        <li><i class="fa fa-edit"></i><%= link_to "Edit Article", blogger.edit_article_path(article) %></li>
+    <% end %>
+    </ul>
   </div>
 
-  <div class="col-md-12 blog-article">
+  <div class="blog-article">
     <p><%= sanitize article.content %></p>
     <% if params[:action] != "show" %>
       <%= link_to article_path(article), class: "btn blue pull-right" do %>
@@ -11,14 +22,6 @@
         <i class="m-icon-swapright m-icon-white"></i>
       <% end %>
     <% end %>
-  </div>
-
-  <div class="col-md-12 blog-img blog-tag-data">
-    <ul class="list-inline">
-      <li><%= user_mini_avatar(article.author) %> <%= link_to user_name(article.author), blogger.articles_path(author_id: article.author_id) %></li>
-      <li><i class="fa fa-calendar"></i> <a href="#"><%= article.publish_date || article.created_at %></a></li>
-      <li><i class="fa fa-comments"></i> <a href="#"><%= "#{article.blog_comments_count} Comments" %></a></li>
-    </ul>
   </div>
 
   <!--div class="col-md-12 blog-img blog-tag-data">
