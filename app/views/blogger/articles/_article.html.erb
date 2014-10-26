@@ -1,7 +1,5 @@
 <div class="blog-item">
-  <h1>
-    <%= link_to article.title, article_path(article) %>
-  </h1>
+  <h1><%= link_to article.title, article_path(article) %></h1>
 
   <div class="col-md-12 blog-img blog-tag-data">
     <ul class="list-inline">
@@ -16,12 +14,6 @@
 
   <div class="blog-article">
     <p><%= sanitize article.content %></p>
-    <% if params[:action] != "show" %>
-      <%= link_to article_path(article), class: "btn blue pull-right" do %>
-        Read more 
-        <i class="m-icon-swapright m-icon-white"></i>
-      <% end %>
-    <% end %>
   </div>
 
   <!--div class="col-md-12 blog-img blog-tag-data">
