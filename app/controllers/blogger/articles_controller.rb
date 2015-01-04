@@ -17,6 +17,7 @@ module Blogger
   
     def show
       @article = Article.find(params[:id])
+      @meta_title = @article.title
   
       respond_to do |format|
         format.html # show.html.erb
