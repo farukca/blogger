@@ -7,7 +7,7 @@ module Blogger
     validates :content, presence: true
     #validates_associated :author
 
-		scope :published, where(confirmed: true)
+		scope :published, -> { where(confirmed: true) }
 		
     def to_param
       "#{id}-#{title.parameterize}"
